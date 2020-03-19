@@ -3,7 +3,7 @@ function [dataset, alphabet] = create_dataset_from_n_binary_sets(dsets)
     % first dimension in dsets is trials, 
     % second is binary_set n (channel)
     % third is timestamp.
-    alphabet = 0:(size(dsets, 2))^2 - 1;
+    alphabet = 0:(2^size(dsets, 1)) - 1;
     dataset = dsets(:, 1, :);
     multiplier = 10;
     for i = 2:size(dsets, 2)
